@@ -419,30 +419,30 @@
         <script>
           // オーディオファイルの定義
           const audioFiles = {
-            'C3': 'sounds/C3.wav',
-            'C#3': 'sounds/Cs3.wav',
-            'D3': 'sounds/D3.wav',
-            'D#3': 'sounds/Ds3.wav',
-            'E3': 'sounds/E3.wav',
-            'F3': 'sounds/F3.wav',
-            'F#3': 'sounds/Fs3.wav',
-            'G3': 'sounds/G3.wav',
-            'G#3': 'sounds/Gs3.wav',
-            'A3': 'sounds/A3.wav',
-            'A#3': 'sounds/As3.wav',
-            'B3': 'sounds/B3.wav',
-            'C4': 'sounds/C4.wav',
-            'C#4': 'sounds/Cs4.wav',
-            'D4': 'sounds/D4.wav',
-            'D#4': 'sounds/Ds4.wav',
-            'E4': 'sounds/E4.wav',
-            'F4': 'sounds/F4.wav',
-            'F#4': 'sounds/Fs4.wav',
-            'G4': 'sounds/G4.wav',
-            'G#4': 'sounds/Gs4.wav',
-            'A4': 'sounds/A4.wav',
-            'A#4': 'sounds/As4.wav',
-            'B4': 'sounds/B4.wav'
+            'C3': 'audio/C3.wav',
+            'C#3': 'audio/Cs3.wav',
+            'D3': 'audio/D3.wav',
+            'D#3': 'audio/Ds3.wav',
+            'E3': 'audio/E3.wav',
+            'F3': 'audio/F3.wav',
+            'F#3': 'audio/Fs3.wav',
+            'G3': 'audio/G3.wav',
+            'G#3': 'audio/Gs3.wav',
+            'A3': 'audio/A3.wav',
+            'A#3': 'audio/As3.wav',
+            'B3': 'audio/B3.wav',
+            'C4': 'audio/C4.wav',
+            'C#4': 'audio/Cs4.wav',
+            'D4': 'audio/D4.wav',
+            'D#4': 'audio/Ds4.wav',
+            'E4': 'audio/E4.wav',
+            'F4': 'audio/F4.wav',
+            'F#4': 'audio/Fs4.wav',
+            'G4': 'audio/G4.wav',
+            'G#4': 'audio/Gs4.wav',
+            'A4': 'audio/A4.wav',
+            'A#4': 'audio/As4.wav',
+            'B4': 'audio/B4.wav'
           };
 
           // 音声を管理するクラス
@@ -486,7 +486,7 @@
               ];
             }
 
-            async loadSounds() {
+            async loadaudio() {
               if (this.loading) return;
               this.loading = true;
 
@@ -500,7 +500,7 @@
                   })
                 );
               } catch (error) {
-                console.error("Error loading sounds:", error);
+                console.error("Error loading audio:", error);
               }
 
               this.loading = false;
@@ -1392,7 +1392,7 @@
           }
 
           // エラーハンドリング（initMIDI()の前に追加）
-          soundPlayer.loadSounds().catch((error) => {
+          soundPlayer.loadaudio().catch((error) => {
             console.error("Failed to load sound files:", error);
           });
 

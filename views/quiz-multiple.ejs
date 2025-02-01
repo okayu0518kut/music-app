@@ -129,13 +129,17 @@
                 const totalQuestions = QUIZ_COUNT;
                 let correctCount = 0;
                 let detailedResults = '';
+                // 桁数に基づいて必要なパディング幅を計算
+                const maxDigits = String(QUIZ_COUNT).length;
 
                 for (let i = 0; i < QUIZ_COUNT; i++) {
+                    // 質問番号を左側にスペースパディング
+                    const questionNum = String(i + 1).padStart(maxDigits, ' ');
                     if (inputAnswers[i] === correctAnswers[i]) {
                         correctCount++;
-                        detailedResults += `質問 ${i + 1}: 正解 (あなたの回答: ${inputAnswers[i]})\n`;
+                        detailedResults += `質問 ${questionNum}: 正解　 (あなたの回答: ${inputAnswers[i]})\n`;
                     } else {
-                        detailedResults += `質問 ${i + 1}: 不正解 (あなたの回答: ${inputAnswers[i]}, 正解: ${correctAnswers[i]})\n`;
+                        detailedResults += `質問 ${questionNum}: 不正解 (あなたの回答: ${inputAnswers[i]}   正解: ${correctAnswers[i]})\n`;
                     }
                     //detailedResults += '\n';
                 }
